@@ -1,0 +1,70 @@
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px 10px 20px;
+  background: #1e352f;
+  color: #ffffff;
+  border-radius: 44px;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid transparent;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+  }
+}
+.buttonContainer::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background: #e8d8c3;
+  transition: all 0.3s ease-in-out;
+  border-radius: 44px;
+}
+
+.arrowContainer {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e8d8c3;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+
+  svg {
+    color: #865135;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.buttonContainer:hover::before {
+  width: 100%;
+}
+
+.buttonContainer:hover a {
+  color: #212121;
+  font-weight: 700;
+}
+
+.buttonContainer:hover {
+  border: 2px solid #1e352f;
+}
+
+.buttonContainer:hover .arrowContainer {
+  background: #1e352f;
+}
+
+.buttonContainer:hover .arrowContainer svg {
+  transform: rotate(45deg);
+  color: #e8d8c3;
+}

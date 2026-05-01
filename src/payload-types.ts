@@ -84,11 +84,15 @@ export interface Config {
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
-    defaultIDType: string;
+    defaultIDType: number;
   };
   fallbackLocale: null;
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    'home-page': HomePage;
+  };
+  globalsSelect: {
+    'home-page': HomePageSelect<false> | HomePageSelect<true>;
+  };
   locale: null;
   widgets: {
     collections: CollectionsWidget;
@@ -122,7 +126,7 @@ export interface UserAuthOperations {
  * via the `definition` "users".
  */
 export interface User {
-  id: string;
+  id: number;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -147,7 +151,7 @@ export interface User {
  * via the `definition` "media".
  */
 export interface Media {
-  id: string;
+  id: number;
   alt: string;
   updatedAt: string;
   createdAt: string;
@@ -166,7 +170,7 @@ export interface Media {
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
-  id: string;
+  id: number;
   key: string;
   data:
     | {
@@ -183,20 +187,20 @@ export interface PayloadKv {
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: string;
+  id: number;
   document?:
     | ({
         relationTo: 'users';
-        value: string | User;
+        value: number | User;
       } | null)
     | ({
         relationTo: 'media';
-        value: string | Media;
+        value: number | Media;
       } | null);
   globalSlug?: string | null;
   user: {
     relationTo: 'users';
-    value: string | User;
+    value: number | User;
   };
   updatedAt: string;
   createdAt: string;
@@ -206,10 +210,10 @@ export interface PayloadLockedDocument {
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: string;
+  id: number;
   user: {
     relationTo: 'users';
-    value: string | User;
+    value: number | User;
   };
   key?: string | null;
   value?:
@@ -229,7 +233,7 @@ export interface PayloadPreference {
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: string;
+  id: number;
   name?: string | null;
   batch?: number | null;
   updatedAt: string;
@@ -314,6 +318,264 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home-page".
+ */
+export interface HomePage {
+  id: number;
+  Hero: {
+    background: number | Media;
+    avant_titre: string;
+    titre: string;
+    sous_titre: string;
+    cta: string;
+    lien: string;
+    sous_cta: string;
+  };
+  spots: {
+    titre: string;
+    sous_titre: string;
+    premiere_image: number | Media;
+    deuxieme_image: number | Media;
+    troisieme_image: number | Media;
+    quatrieme_image: number | Media;
+    paragraphe: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    cta: string;
+    lien: string;
+  };
+  about: {
+    titre: string;
+    sous_titre: string;
+    background: number | Media;
+    paragraphe: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    cta: string;
+    lien: string;
+  };
+  vehicules: {
+    titre: string;
+    paragraphe: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    premiere_image: number | Media;
+    deuxieme_image: number | Media;
+  };
+  experiences: {
+    image: number | Media;
+    premier_titre: string;
+    premier_paragraphe: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    deuxieme_titre: string;
+    deuxieme_paragraphe: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    cta: string;
+    lien: string;
+  };
+  arguments?:
+    | {
+        icon: number | Media;
+        descripption: string;
+        id?: string | null;
+      }[]
+    | null;
+  etapes: {
+    premier_titre: string;
+    premier_paragraphe: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    deuxieme_titre: string;
+    deuxieme_paragraphe: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    cta: string;
+    lien: string;
+  };
+  faq?:
+    | {
+        question: string;
+        reponse: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home-page_select".
+ */
+export interface HomePageSelect<T extends boolean = true> {
+  Hero?:
+    | T
+    | {
+        background?: T;
+        avant_titre?: T;
+        titre?: T;
+        sous_titre?: T;
+        cta?: T;
+        lien?: T;
+        sous_cta?: T;
+      };
+  spots?:
+    | T
+    | {
+        titre?: T;
+        sous_titre?: T;
+        premiere_image?: T;
+        deuxieme_image?: T;
+        troisieme_image?: T;
+        quatrieme_image?: T;
+        paragraphe?: T;
+        cta?: T;
+        lien?: T;
+      };
+  about?:
+    | T
+    | {
+        titre?: T;
+        sous_titre?: T;
+        background?: T;
+        paragraphe?: T;
+        cta?: T;
+        lien?: T;
+      };
+  vehicules?:
+    | T
+    | {
+        titre?: T;
+        paragraphe?: T;
+        premiere_image?: T;
+        deuxieme_image?: T;
+      };
+  experiences?:
+    | T
+    | {
+        image?: T;
+        premier_titre?: T;
+        premier_paragraphe?: T;
+        deuxieme_titre?: T;
+        deuxieme_paragraphe?: T;
+        cta?: T;
+        lien?: T;
+      };
+  arguments?:
+    | T
+    | {
+        icon?: T;
+        descripption?: T;
+        id?: T;
+      };
+  etapes?:
+    | T
+    | {
+        premier_titre?: T;
+        premier_paragraphe?: T;
+        deuxieme_titre?: T;
+        deuxieme_paragraphe?: T;
+        cta?: T;
+        lien?: T;
+      };
+  faq?:
+    | T
+    | {
+        question?: T;
+        reponse?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

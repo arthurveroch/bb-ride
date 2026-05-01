@@ -7,6 +7,7 @@ import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { HomePage } from './app/globals/HomePage'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -31,4 +32,5 @@ export default buildConfig({
   }),
   sharp,
   plugins: [],
+  globals: [HomePage],
 })

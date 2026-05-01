@@ -1,0 +1,44 @@
+.phoneButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #e8d8c3;
+  border: 3px solid #1e352f;
+  position: relative;
+  z-index: 1;
+
+  a {
+    color: #1e352f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s ease-in-out;
+  }
+}
+
+.phoneButtonContainer::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 0;
+  height: 0;
+  z-index: -1;
+  background: #1e352f;
+  transition: all 0.3s ease-in-out;
+}
+
+.phoneButtonContainer:hover::before {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.phoneButtonContainer:hover {
+  a {
+    color: #e8d8c3;
+  }
+}
