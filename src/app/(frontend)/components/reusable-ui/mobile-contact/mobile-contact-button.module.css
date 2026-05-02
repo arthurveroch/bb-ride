@@ -1,0 +1,23 @@
+.mobileContactContainer {
+  position: fixed;
+  bottom: 20px;
+  max-width: 370px;
+  z-index: 250;
+  display: flex;
+  align-items: center;
+  left: 50%;
+  transform: translate(-50%, 0);
+  gap: 15px;
+  padding: 10px;
+  border-radius: 150px;
+  background: #ffffffcc;
+  backdrop-filter: blur(10.9);
+  flex-shrink: 0;
+  display: none;
+}
+
+@media screen and (min-width: 1401px) {
+  .mobileContactContainer {
+    display: none;
+  }
+}

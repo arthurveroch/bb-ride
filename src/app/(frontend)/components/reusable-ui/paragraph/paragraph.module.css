@@ -1,0 +1,60 @@
+.paragraphContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 62px;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background: #ffffffcc;
+  position: relative;
+  border-radius: 22px;
+  box-shadow: 5px 5px 24px 0px rgba(0, 0, 0, 0.12);
+}
+
+.paragraphContainer::before {
+  content: '';
+  position: absolute;
+  left: -52.5px;
+  bottom: -74px;
+  border-radius: 22px;
+  z-index: -1;
+  width: 117;
+  height: 120px;
+  background: #cdecd3;
+}
+
+.paragraphContainer::after {
+  content: '';
+  position: absolute;
+  right: -52.5px;
+  top: -74px;
+  border-radius: 22px;
+  z-index: -1;
+  width: 117;
+  height: 120px;
+  background: #f3d4b9;
+}
+
+.paragraph {
+  text-align: center;
+}
+
+@media screen and (max-width: 1280px) {
+  .paragraphContainer {
+    gap: 30px 20px;
+  }
+
+  .paragraphContainer::after {
+    width: 74px;
+    height: 76px;
+    top: -31px;
+    right: -30px;
+  }
+
+  .paragraphContainer::before {
+    width: 74px;
+    height: 76px;
+    bottom: -30px;
+    left: -31px;
+  }
+}

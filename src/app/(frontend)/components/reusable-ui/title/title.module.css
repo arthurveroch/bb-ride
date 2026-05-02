@@ -1,0 +1,33 @@
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+
+  h2 {
+    padding: 10px 30px;
+    background: #e8d8c3;
+    font-size: 35px;
+    font-weight: 600;
+    color: #865135;
+    border-radius: 150px;
+  }
+
+  h3 {
+    font-size: 52px;
+    color: #865135;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .titleContainer {
+    h2 {
+      font-size: 30px;
+    }
+
+    h3 {
+      font-size: 35px;
+    }
+  }
+}
