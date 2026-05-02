@@ -57,3 +57,33 @@
   display: flex;
   gap: 15px;
 }
+
+.burger {
+  display: none;
+}
+
+@media screen and (max-width: 1400px) {
+  .navbar {
+    width: calc(100% - 20px);
+  }
+
+  .menuContainer {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .logoContainer {
+    p {
+      display: none;
+    }
+  }
+
+  .separator {
+    display: none;
+  }
+}

@@ -1,3 +1,5 @@
+import { MobileMenuContextProvider } from '../context/MobileMenuContext'
+import MobileMenu from './components/mobile-menu/MobileMenu'
 import Navbar from './components/navbar/Navbar'
 import './styles.css'
 
@@ -9,8 +11,11 @@ export default async function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        <main>{children}</main>
+        <MobileMenuContextProvider>
+          <Navbar />
+          <MobileMenu />
+          <main>{children}</main>
+        </MobileMenuContextProvider>
       </body>
     </html>
   )

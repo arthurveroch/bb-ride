@@ -52,7 +52,8 @@
   bottom: 94px;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 1280px;
+  width: 100%;
+  padding: 0 10px;
 }
 
 .subCta {
@@ -61,4 +62,47 @@
   background: #e8d8c3;
   padding: 10px 40px;
   border-radius: 24px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1280px) {
+  .subCta {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .subCta {
+    font-size: 16px;
+  }
+
+  .titleContainer {
+    transform: translate(0);
+    left: 0;
+    padding: 0 30px;
+    top: 164px;
+  }
+
+  .subTitle {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .title {
+    h1 {
+      font-size: 45px;
+    }
+
+    h2 {
+      font-size: 80px;
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .title {
+    h2 {
+      font-size: 70px;
+    }
+  }
 }
