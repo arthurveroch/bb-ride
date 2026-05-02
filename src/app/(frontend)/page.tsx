@@ -2,6 +2,7 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import Hero from './components/home-page/hero/Hero'
 import Spots from './components/home-page/spots/Spots'
+import Moments from './components/home-page/moments/Moments'
 
 export const revalidate = 3600 * 24 * 7
 
@@ -20,6 +21,7 @@ export default async function HomePage() {
     <main>
       <Hero heroData={data.Hero} />
       <Spots spotsData={data.spots} />
+      <Moments momentsData={data.about} />
     </main>
   )
 }

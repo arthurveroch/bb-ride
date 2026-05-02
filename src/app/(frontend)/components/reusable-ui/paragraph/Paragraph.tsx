@@ -11,11 +11,12 @@ type Props = {
   data: SerializedEditorState<SerializedLexicalNode>
   link: string
   textButton: string
+  className: string | null
 }
 
-export default function Paragraph({ data, link, textButton }: Props) {
+export default function Paragraph({ data, link, textButton, className }: Props) {
   return (
-    <div className={`${inter.className} ${styles.paragraphContainer}`}>
+    <div className={`${inter.className} ${styles.paragraphContainer} ${className && className}`}>
       <RichText className={styles.paragraph} data={data} />
       <Button text={textButton} link={link} />
     </div>

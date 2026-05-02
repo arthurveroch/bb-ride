@@ -23,78 +23,80 @@ export default function Spots({ spotsData }: Props) {
   ]
 
   return (
-    <section className={styles.spotsContainer}>
-      <Title title={spotsData.titre} subtitle={spotsData.sous_titre} />
-      <div className={styles.contentContainer}>
-        <div className={styles.images}>
-          <div
-            style={
-              typeof spotsData.premiere_image === 'object'
-                ? {
-                    background: `url(${spotsData.premiere_image.url})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }
-                : {}
-            }
-            className={styles.image}
-          />
-          <div
-            className={styles.image}
-            style={
-              typeof spotsData.deuxieme_image === 'object'
-                ? {
-                    background: `url(${spotsData.deuxieme_image.url})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }
-                : {}
-            }
-          />
+    <section className={styles.spots}>
+      <div className={styles.spotsContainer}>
+        <Title title={spotsData.titre} subtitle={spotsData.sous_titre} />
+        <div className={styles.contentContainer}>
+          <div className={styles.images}>
+            <div
+              style={
+                typeof spotsData.premiere_image === 'object'
+                  ? {
+                      background: `url(${spotsData.premiere_image.url})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    }
+                  : {}
+              }
+              className={styles.image}
+            />
+            <div
+              className={styles.image}
+              style={
+                typeof spotsData.deuxieme_image === 'object'
+                  ? {
+                      background: `url(${spotsData.deuxieme_image.url})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    }
+                  : {}
+              }
+            />
+          </div>
+          <Paragraph data={spotsData.paragraphe} link={spotsData.lien} textButton={spotsData.cta} />
+          <div className={styles.images}>
+            <div
+              className={styles.image}
+              style={
+                typeof spotsData.troisieme_image === 'object'
+                  ? {
+                      background: `url(${spotsData.troisieme_image.url})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    }
+                  : {}
+              }
+            />
+            <div
+              className={styles.image}
+              style={
+                typeof spotsData.quatrieme_image === 'object'
+                  ? {
+                      background: `url(${spotsData.quatrieme_image.url})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    }
+                  : {}
+              }
+            />
+          </div>
         </div>
-        <Paragraph data={spotsData.paragraphe} link={spotsData.lien} textButton={spotsData.cta} />
-        <div className={styles.images}>
-          <div
-            className={styles.image}
-            style={
-              typeof spotsData.troisieme_image === 'object'
-                ? {
-                    background: `url(${spotsData.troisieme_image.url})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }
-                : {}
-            }
-          />
-          <div
-            className={styles.image}
-            style={
-              typeof spotsData.quatrieme_image === 'object'
-                ? {
-                    background: `url(${spotsData.quatrieme_image.url})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }
-                : {}
-            }
-          />
-        </div>
+        <Swiper
+          className={styles.sliderWrapper}
+          modules={[Navigation, Pagination]}
+          pagination={{ clickable: true, el: '.pagination' }}
+          slidesPerView={1}
+        >
+          {slides.map((slide, index) => (
+            <SwiperSlide
+              className={styles.slide}
+              key={index}
+              style={typeof slide === 'object' ? { background: `url(${slide.url})` } : {}}
+            />
+          ))}
+        </Swiper>
+        <div className="pagination" />
       </div>
-      <Swiper
-        className={styles.sliderWrapper}
-        modules={[Navigation, Pagination]}
-        pagination={{ clickable: true, el: '.pagination' }}
-        slidesPerView={1}
-      >
-        {slides.map((slide, index) => (
-          <SwiperSlide
-            className={styles.slide}
-            key={index}
-            style={typeof slide === 'object' ? { background: `url(${slide.url})` } : {}}
-          />
-        ))}
-      </Swiper>
-      <div className="pagination" />
     </section>
   )
 }
