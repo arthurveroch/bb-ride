@@ -6,6 +6,7 @@ import Moments from './components/home-page/moments/Moments'
 import Experiences from './components/home-page/experiences/Experiences'
 import Vehicles from './components/home-page/vehicles/Vehicles'
 import Pricing from './components/home-page/pricing/Pricing'
+import Faq from './components/home-page/faq/Faq'
 
 export const revalidate = 3600 * 24 * 7
 
@@ -18,6 +19,8 @@ const getHomePage = async () => {
 export default async function HomePage() {
   const data = await getHomePage()
 
+  console.log(data)
+
   return (
     <main>
       <Hero heroData={data.Hero} />
@@ -26,6 +29,7 @@ export default async function HomePage() {
       <Vehicles vehiclesData={data.vehicules} />
       <Experiences experiencesData={data.experiences} />
       <Pricing pricingData={data.etapes} />
+      <Faq faqData={data.faq} />
     </main>
   )
 }
