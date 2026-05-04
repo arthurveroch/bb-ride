@@ -69,3 +69,11 @@
   transform: rotate(45deg);
   color: #e8d8c3;
 }
+
+@media screen and (max-width: 400px) {
+  .buttonContainer {
+    a {
+      font-size: 16px;
+    }
+  }
+}

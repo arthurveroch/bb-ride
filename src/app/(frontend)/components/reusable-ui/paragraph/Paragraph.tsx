@@ -12,13 +12,14 @@ type Props = {
   link: string
   textButton: string
   className: string | null
+  containButton: boolean
 }
 
-export default function Paragraph({ data, link, textButton, className }: Props) {
+export default function Paragraph({ data, link, textButton, className, containButton }: Props) {
   return (
     <div className={`${inter.className} ${styles.paragraphContainer} ${className && className}`}>
       <RichText className={styles.paragraph} data={data} />
-      <Button text={textButton} link={link} />
+      {containButton && <Button text={textButton} link={link} />}
     </div>
   )
 }

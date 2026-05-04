@@ -25,7 +25,7 @@ export default function Spots({ spotsData }: Props) {
   return (
     <section className={styles.spots}>
       <div className={styles.spotsContainer}>
-        <Title title={spotsData.titre} subtitle={spotsData.sous_titre} />
+        <Title className={null} title={spotsData.titre} subtitle={spotsData.sous_titre} />
         <div className={styles.contentContainer}>
           <div className={styles.images}>
             <div
@@ -53,7 +53,13 @@ export default function Spots({ spotsData }: Props) {
               }
             />
           </div>
-          <Paragraph data={spotsData.paragraphe} link={spotsData.lien} textButton={spotsData.cta} />
+          <Paragraph
+            className={null}
+            containButton={true}
+            data={spotsData.paragraphe}
+            link={spotsData.lien}
+            textButton={spotsData.cta}
+          />
           <div className={styles.images}>
             <div
               className={styles.image}

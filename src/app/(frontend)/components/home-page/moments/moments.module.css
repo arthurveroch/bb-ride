@@ -67,6 +67,7 @@
   align-items: center;
   gap: 50px;
   justify-content: center;
+  display: none;
 }
 
 .imageMobile {
@@ -80,6 +81,10 @@
 @media screen and (max-width: 1024px) {
   .paragraphContainer {
     display: none;
+  }
+
+  .paragraphMobileContainer {
+    display: flex;
   }
 
   .moments {

@@ -11,7 +11,7 @@ export default function Moments({ momentsData }: Props) {
   return (
     <section className={styles.momentsContainer}>
       <div className={styles.moments}>
-        <Title title={momentsData.titre} subtitle={momentsData.sous_titre} />
+        <Title className={null} title={momentsData.titre} subtitle={momentsData.sous_titre} />
         <div
           style={
             typeof momentsData.background === 'object'
@@ -29,6 +29,7 @@ export default function Moments({ momentsData }: Props) {
             data={momentsData.paragraphe}
             textButton={momentsData.cta}
             link={momentsData.lien}
+            containButton={true}
           />
         </div>
         <div className={styles.paragraphMobileContainer}>
@@ -37,9 +38,16 @@ export default function Moments({ momentsData }: Props) {
             data={momentsData.paragraphe}
             textButton={momentsData.cta}
             link={momentsData.lien}
+            containButton={true}
           />
           <div className={styles.imageMobile}>
-            <img src={momentsData.background.url} />
+            <img
+              src={
+                typeof momentsData.background === 'object'
+                  ? (momentsData.background.url ?? undefined)
+                  : undefined
+              }
+            />
           </div>
         </div>
       </div>

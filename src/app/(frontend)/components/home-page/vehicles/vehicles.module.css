@@ -1,0 +1,89 @@
+.vehiclesContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 250px 20px;
+}
+
+.vehicles {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  max-width: 1440px;
+}
+
+.description {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+}
+
+.image {
+  width: 398px;
+  height: 368px;
+  border-radius: 24px;
+}
+
+.paragraph {
+  max-width: 490px;
+
+  p {
+    text-align: left;
+  }
+}
+
+.electric {
+  width: 201px;
+  height: 162px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e8d8c3;
+  border-radius: 44px;
+  position: absolute;
+  z-index: -1;
+  top: -106px;
+}
+
+.paragraph::before {
+  display: none;
+}
+
+.paragraph::after {
+  display: none;
+}
+
+@media screen and (max-width: 1440px) {
+  .paragraph {
+    max-width: none;
+    width: 100%;
+  }
+
+  .description {
+    flex-direction: column;
+  }
+
+  .image {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .paragraph {
+    padding: 30px 20px;
+  }
+
+  .image {
+    height: 222px;
+  }
+
+  .vehiclesContainer {
+    padding: 120px 20px;
+  }
+
+  .vehicles {
+    gap: 60px;
+  }
+}

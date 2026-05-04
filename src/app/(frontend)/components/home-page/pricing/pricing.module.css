@@ -1,0 +1,51 @@
+.princingContainer {
+  display: flex;
+  width: 100%;
+  padding: 250px 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.descriptions {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.paragraph {
+  max-width: 450px;
+
+  p {
+    text-align: left;
+    font-size: 16px;
+  }
+}
+
+.paragraph::after {
+  display: none;
+}
+
+.paragraph::before {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .princingContainer {
+    padding: 125px 20px;
+  }
+
+  .descriptions {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
