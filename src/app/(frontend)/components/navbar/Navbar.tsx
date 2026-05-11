@@ -44,7 +44,7 @@ export default function Navbar() {
           )}
         </ul>
         <div className={styles.ctaContainer}>
-          <Button link="/contact" text="Réserver mon véhicule" />
+          {pathname !== '/contact' && <Button link="/contact" text="Réserver mon véhicule" />}
           <PhoneButton />
         </div>
       </div>

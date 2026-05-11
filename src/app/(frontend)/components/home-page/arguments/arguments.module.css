@@ -1,0 +1,21 @@
+.argumentsContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 250px 20px;
+}
+
+.arguments {
+  display: flex;
+  max-width: 950px;
+  width: 100%;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1024px) {
+  .argumentsContainer {
+    padding: 120px 20px;
+  }
+}

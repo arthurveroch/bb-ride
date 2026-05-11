@@ -1,5 +1,3 @@
-import { revalidateTag } from 'next/cache'
-import { type } from 'os'
 import type { GlobalConfig } from 'payload'
 
 export const HomePage: GlobalConfig = {
@@ -223,6 +221,8 @@ export const HomePage: GlobalConfig = {
       fields: [
         { name: 'icon', type: 'relationship', relationTo: 'media', required: true },
         { name: 'descripption', type: 'text', required: true },
+        { name: 'width', type: 'number', required: true },
+        { name: 'height', type: 'number', required: true },
       ],
     },
     {

@@ -1,0 +1,12 @@
+.argumentCardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  p {
+    font-weight: 700;
+    max-width: 250px;
+    text-align: center;
+  }
+}

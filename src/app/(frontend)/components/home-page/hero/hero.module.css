@@ -36,10 +36,12 @@
 .subTitle {
   background: #fff;
   padding: 10px 40px;
+  max-width: 604px;
   border-radius: 60px;
   color: #865135;
   font-size: 30px;
   font-weight: 700;
+  text-align: left;
 }
 
 .ctaContainer {
@@ -69,18 +71,15 @@
   .subCta {
     width: 100%;
   }
+
+  .titleContainer {
+    left: 30px;
+  }
 }
 
 @media screen and (max-width: 1024px) {
   .subCta {
     font-size: 16px;
-  }
-
-  .titleContainer {
-    transform: translate(0);
-    left: 0;
-    padding: 0 30px;
-    top: 164px;
   }
 
   .subTitle {
@@ -96,6 +95,16 @@
     h2 {
       font-size: 80px;
     }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .titleContainer {
+    transform: translate(0);
+    max-width: 338px;
+    left: 0;
+    padding: 0 30px;
+    top: 164px;
   }
 }
 

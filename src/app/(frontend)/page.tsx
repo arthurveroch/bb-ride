@@ -7,6 +7,7 @@ import Experiences from './components/home-page/experiences/Experiences'
 import Vehicles from './components/home-page/vehicles/Vehicles'
 import Pricing from './components/home-page/pricing/Pricing'
 import Faq from './components/home-page/faq/Faq'
+import Arguments from './components/home-page/arguments/Arguments'
 
 export const revalidate = 3600 * 24 * 7
 
@@ -28,6 +29,7 @@ export default async function HomePage() {
       <Moments momentsData={data.about} />
       <Vehicles vehiclesData={data.vehicules} />
       <Experiences experiencesData={data.experiences} />
+      <Arguments argumentsData={data.arguments} />
       <Pricing pricingData={data.etapes} />
       <Faq faqData={data.faq} />
     </main>

@@ -442,6 +442,8 @@ export interface HomePage {
     | {
         icon: number | Media;
         descripption: string;
+        width: number;
+        height: number;
         id?: string | null;
       }[]
     | null;
@@ -554,6 +556,8 @@ export interface HomePageSelect<T extends boolean = true> {
     | {
         icon?: T;
         descripption?: T;
+        width?: T;
+        height?: T;
         id?: T;
       };
   etapes?:
