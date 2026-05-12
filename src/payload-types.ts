@@ -89,9 +89,13 @@ export interface Config {
   fallbackLocale: null;
   globals: {
     'home-page': HomePage;
+    professionnal: Professionnal;
+    'mentions-legales': MentionsLegale;
   };
   globalsSelect: {
     'home-page': HomePageSelect<false> | HomePageSelect<true>;
+    professionnal: ProfessionnalSelect<false> | ProfessionnalSelect<true>;
+    'mentions-legales': MentionsLegalesSelect<false> | MentionsLegalesSelect<true>;
   };
   locale: null;
   widgets: {
@@ -495,6 +499,218 @@ export interface HomePage {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "professionnal".
+ */
+export interface Professionnal {
+  id: number;
+  hero: {
+    background: number | Media;
+    title: string;
+    sous_titre: string;
+    cta: string;
+    sous_cta: string;
+    lien: string;
+  };
+  solution: {
+    title: string;
+    background: number | Media;
+    paragraph: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    cta: string;
+    lien: string;
+  };
+  secteurs: {
+    image: number | Media;
+    premier_titre: string;
+    premier_paragraphe: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    deuxieme_titre: string;
+    deuxieme_paragraphe: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+  };
+  services: {
+    premiere_image: number | Media;
+    deuxieme_image: number | Media;
+    troisieme_image: number | Media;
+    quatrieme_image: number | Media;
+    premier_titre: string;
+    premier_paragraphe: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    deuxieme_titre: string;
+    deuxieme_paragraphe: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    cta: string;
+    lien: string;
+  };
+  equipements?:
+    | {
+        icone: number | Media;
+        titre: string;
+        id?: string | null;
+      }[]
+    | null;
+  selection: {
+    titre: string;
+    paragraphe: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    image: number | Media;
+  };
+  offre: {
+    titre: string;
+    paragraphe: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    background: number | Media;
+    cta: string;
+    lien: string;
+  };
+  histoire: {
+    titre: string;
+    paragraphe: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    image: number | Media;
+    cta: string;
+    lien: string;
+  };
+  arguments?:
+    | {
+        icone: number | Media;
+        description: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "mentions-legales".
+ */
+export interface MentionsLegale {
+  id: number;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "home-page_select".
  */
 export interface HomePageSelect<T extends boolean = true> {
@@ -577,6 +793,106 @@ export interface HomePageSelect<T extends boolean = true> {
         reponse?: T;
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "professionnal_select".
+ */
+export interface ProfessionnalSelect<T extends boolean = true> {
+  hero?:
+    | T
+    | {
+        background?: T;
+        title?: T;
+        sous_titre?: T;
+        cta?: T;
+        sous_cta?: T;
+        lien?: T;
+      };
+  solution?:
+    | T
+    | {
+        title?: T;
+        background?: T;
+        paragraph?: T;
+        cta?: T;
+        lien?: T;
+      };
+  secteurs?:
+    | T
+    | {
+        image?: T;
+        premier_titre?: T;
+        premier_paragraphe?: T;
+        deuxieme_titre?: T;
+        deuxieme_paragraphe?: T;
+      };
+  services?:
+    | T
+    | {
+        premiere_image?: T;
+        deuxieme_image?: T;
+        troisieme_image?: T;
+        quatrieme_image?: T;
+        premier_titre?: T;
+        premier_paragraphe?: T;
+        deuxieme_titre?: T;
+        deuxieme_paragraphe?: T;
+        cta?: T;
+        lien?: T;
+      };
+  equipements?:
+    | T
+    | {
+        icone?: T;
+        titre?: T;
+        id?: T;
+      };
+  selection?:
+    | T
+    | {
+        titre?: T;
+        paragraphe?: T;
+        image?: T;
+      };
+  offre?:
+    | T
+    | {
+        titre?: T;
+        paragraphe?: T;
+        background?: T;
+        cta?: T;
+        lien?: T;
+      };
+  histoire?:
+    | T
+    | {
+        titre?: T;
+        paragraphe?: T;
+        image?: T;
+        cta?: T;
+        lien?: T;
+      };
+  arguments?:
+    | T
+    | {
+        icone?: T;
+        description?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "mentions-legales_select".
+ */
+export interface MentionsLegalesSelect<T extends boolean = true> {
+  content?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

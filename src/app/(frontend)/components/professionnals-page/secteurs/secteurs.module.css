@@ -1,0 +1,89 @@
+.secteursContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.secteurs {
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.image {
+  width: 421px;
+  height: 307px;
+  border-radius: 44px;
+  position: relative;
+}
+
+.secteurDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+}
+
+.image::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 117px;
+  height: 120px;
+  border-radius: 22px;
+  background: #cdecd3;
+  left: -52px;
+  bottom: -49px;
+}
+
+.image::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 117px;
+  height: 120px;
+  border-radius: 22px;
+  background: #f3d4b9;
+  right: -52px;
+  top: -49px;
+}
+
+.paragraph {
+  max-width: 450px;
+  padding: 40px 20px;
+  p {
+    text-align: left;
+  }
+}
+
+.paragraph::before {
+  display: none;
+}
+
+.paragraph::after {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .secteurs {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .image::before {
+    display: none;
+  }
+  .image::after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 421px) {
+  .image {
+    width: 100%;
+  }
+}
