@@ -10,7 +10,7 @@ type Props = {
 
 export default function Pricing({ pricingData }: Props) {
   return (
-    <section className={styles.princingContainer}>
+    <section className={styles.pricingContainer}>
       <div className={styles.descriptions}>
         <div className={styles.description}>
           <Title subtitle={null} title={pricingData.premier_titre} className={null} />

@@ -1,4 +1,4 @@
-.princingContainer {
+.pricingContainer {
   display: flex;
   width: 100%;
   padding: 0 20px;
@@ -40,10 +40,6 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .princingContainer {
-    padding: 125px 20px;
-  }
-
   .descriptions {
     flex-direction: column;
     gap: 50px;

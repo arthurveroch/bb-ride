@@ -1,4 +1,5 @@
 import { MobileMenuContextProvider } from '../context/MobileMenuContext'
+import Footer from './components/footer/Footer'
 import MobileMenu from './components/mobile-menu/MobileMenu'
 import Navbar from './components/navbar/Navbar'
 import MobileContactButtons from './components/reusable-ui/mobile-contact/MobileContactButtons'
@@ -17,6 +18,7 @@ export default async function RootLayout({ children }: Props) {
           <MobileMenu />
           <MobileContactButtons />
           <main>{children}</main>
+          <Footer />
         </MobileMenuContextProvider>
       </body>
     </html>

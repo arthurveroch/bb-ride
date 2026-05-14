@@ -7,6 +7,7 @@ import Services from '@/app/(frontend)/components/professionnals-page/services/S
 import Personnalisation from '../components/professionnals-page/personnalisation/Personnalisation'
 import Selection from '../components/professionnals-page/selection/Selection'
 import Offre from '../components/professionnals-page/offre/Offre'
+import Histoire from '../components/professionnals-page/histoire/Histoire'
 
 export const revalidate = 3600 * 24 * 7
 
@@ -32,6 +33,7 @@ export default async function ProfessionnalPage() {
       <Personnalisation persoData={data.equipements} />
       <Selection selectionData={data.selection} />
       <Offre offreData={data.offre} />
+      <Histoire histoireData={data.histoire} />
     </main>
   )
 }

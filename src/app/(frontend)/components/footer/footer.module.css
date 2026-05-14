@@ -1,0 +1,18 @@
+.footerContainer {
+  width: 100%;
+  background: #e8d8c3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 52px 0 77px 0;
+}
+
+.footer {
+  display: flex;
+  gap: 137px;
+  max-width: 1071px;
+  width: 100%;
+  padding: 30px 60px;
+  background: #ffffff;
+  border-radius: 22px;
+}

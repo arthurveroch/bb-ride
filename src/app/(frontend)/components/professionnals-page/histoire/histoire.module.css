@@ -1,0 +1,57 @@
+.histoireContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 250px 20px;
+}
+
+.histoire {
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.contentContainer {
+  display: flex;
+  gap: 50px;
+}
+
+.image {
+  width: 589px;
+  height: 100%;
+  border-radius: 44px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+}
+
+.paragraph {
+  max-width: 694px;
+}
+
+.paragraph::before {
+  display: none;
+}
+
+.paragraph::after {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .histoireContainer {
+    padding: 120px 20px;
+  }
+
+  .paragraph {
+    width: 100%;
+    max-width: none;
+  }
+
+  .image {
+    display: none;
+  }
+}
