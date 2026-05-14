@@ -179,14 +179,24 @@ export const Professional: GlobalConfig = {
 
       fields: [
         {
-          name: 'icone',
+          name: 'icon',
           type: 'relationship',
           relationTo: 'media',
           required: true,
         },
         {
-          name: 'titre',
+          name: 'description',
           type: 'text',
+          required: true,
+        },
+        {
+          name: 'width',
+          type: 'number',
+          required: true,
+        },
+        {
+          name: 'height',
+          type: 'number',
           required: true,
         },
       ],
@@ -210,6 +220,16 @@ export const Professional: GlobalConfig = {
           name: 'image',
           type: 'relationship',
           relationTo: 'media',
+          required: true,
+        },
+        {
+          name: 'cta',
+          type: 'text',
+          required: true,
+        },
+        {
+          name: 'lien',
+          type: 'text',
           required: true,
         },
       ],
@@ -285,7 +305,7 @@ export const Professional: GlobalConfig = {
       type: 'array',
       fields: [
         {
-          name: 'icone',
+          name: 'icon',
           type: 'relationship',
           relationTo: 'media',
           required: true,

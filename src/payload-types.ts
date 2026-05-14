@@ -445,7 +445,7 @@ export interface HomePage {
   arguments?:
     | {
         icon: number | Media;
-        descripption: string;
+        description: string;
         width: number;
         height: number;
         id?: string | null;
@@ -609,8 +609,10 @@ export interface Professionnal {
   };
   equipements?:
     | {
-        icone: number | Media;
-        titre: string;
+        icon: number | Media;
+        description: string;
+        width: number;
+        height: number;
         id?: string | null;
       }[]
     | null;
@@ -632,6 +634,8 @@ export interface Professionnal {
       [k: string]: unknown;
     };
     image: number | Media;
+    cta: string;
+    lien: string;
   };
   offre: {
     titre: string;
@@ -677,7 +681,7 @@ export interface Professionnal {
   };
   arguments?:
     | {
-        icone: number | Media;
+        icon: number | Media;
         description: string;
         id?: string | null;
       }[]
@@ -771,7 +775,7 @@ export interface HomePageSelect<T extends boolean = true> {
     | T
     | {
         icon?: T;
-        descripption?: T;
+        description?: T;
         width?: T;
         height?: T;
         id?: T;
@@ -847,8 +851,10 @@ export interface ProfessionnalSelect<T extends boolean = true> {
   equipements?:
     | T
     | {
-        icone?: T;
-        titre?: T;
+        icon?: T;
+        description?: T;
+        width?: T;
+        height?: T;
         id?: T;
       };
   selection?:
@@ -857,6 +863,8 @@ export interface ProfessionnalSelect<T extends boolean = true> {
         titre?: T;
         paragraphe?: T;
         image?: T;
+        cta?: T;
+        lien?: T;
       };
   offre?:
     | T
@@ -879,7 +887,7 @@ export interface ProfessionnalSelect<T extends boolean = true> {
   arguments?:
     | T
     | {
-        icone?: T;
+        icon?: T;
         description?: T;
         id?: T;
       };

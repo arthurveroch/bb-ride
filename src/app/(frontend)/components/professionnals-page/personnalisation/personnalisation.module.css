@@ -1,0 +1,72 @@
+.persoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+}
+
+.arguments {
+  display: flex;
+  max-width: 900px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+}
+
+.perso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  background: #fff;
+  max-width: 1175px;
+  width: 100%;
+  padding: 40px 50px 70px 50px;
+  border-radius: 22px;
+  box-shadow: 0px 0px 23.7px 0px rgba(0, 0, 0, 0.12);
+  position: relative;
+
+  h2 {
+    font-size: 16px;
+  }
+}
+
+.perso::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 117px;
+  height: 120px;
+  background: #f3d4b9;
+  border-radius: 22px;
+  bottom: -40px;
+  left: -53.5px;
+}
+
+.perso::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 117px;
+  height: 120px;
+  background: #cdecd3;
+  border-radius: 22px;
+  top: -40px;
+  right: -53.5px;
+}
+
+@media screen and (max-width: 1280px) {
+  .perso::after {
+    display: none;
+  }
+
+  .perso::before {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .persoContainer {
+    padding: 0 20px;
+  }
+}

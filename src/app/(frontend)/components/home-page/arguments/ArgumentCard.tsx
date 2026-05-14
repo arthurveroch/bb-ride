@@ -6,7 +6,7 @@ import { inter } from '@/app/lib/fonts'
 type Props = {
   argument: {
     icon: number | Media
-    descripption: string
+    description: string
     width: number
     height: number
     id?: string | null
@@ -22,7 +22,7 @@ export default function ArgumentCard({ argument }: Props) {
         height={argument.height}
         alt={typeof argument.icon === 'object' ? argument.icon.alt : ''}
       />
-      <p className={inter.className}>{argument.descripption}</p>
+      <p className={inter.className}>{argument.description}</p>
     </div>
   )
 }

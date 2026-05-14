@@ -3,6 +3,10 @@ import config from '@payload-config'
 import Hero from '../components/professionnals-page/hero/Hero'
 import Solutions from '../components/professionnals-page/solutions/Solutions'
 import Secteurs from '../components/professionnals-page/secteurs/Secteurs'
+import Services from '@/app/(frontend)/components/professionnals-page/services/Services'
+import Personnalisation from '../components/professionnals-page/personnalisation/Personnalisation'
+import Selection from '../components/professionnals-page/selection/Selection'
+import Offre from '../components/professionnals-page/offre/Offre'
 
 export const revalidate = 3600 * 24 * 7
 
@@ -24,6 +28,10 @@ export default async function ProfessionnalPage() {
       <Hero heroData={data.hero} />
       <Solutions solutionsData={data.solution} />
       <Secteurs secteursData={data.secteurs} />
+      <Services servicesData={data.services} />
+      <Personnalisation persoData={data.equipements} />
+      <Selection selectionData={data.selection} />
+      <Offre offreData={data.offre} />
     </main>
   )
 }

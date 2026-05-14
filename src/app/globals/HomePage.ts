@@ -220,7 +220,7 @@ export const HomePage: GlobalConfig = {
       type: 'array',
       fields: [
         { name: 'icon', type: 'relationship', relationTo: 'media', required: true },
-        { name: 'descripption', type: 'text', required: true },
+        { name: 'description', type: 'text', required: true },
         { name: 'width', type: 'number', required: true },
         { name: 'height', type: 'number', required: true },
       ],
