@@ -315,6 +315,16 @@ export const Professional: GlobalConfig = {
           type: 'text',
           required: true,
         },
+        {
+          name: 'width',
+          type: 'number',
+          required: true,
+        },
+        {
+          name: 'height',
+          type: 'number',
+          required: true,
+        },
       ],
     },
   ],

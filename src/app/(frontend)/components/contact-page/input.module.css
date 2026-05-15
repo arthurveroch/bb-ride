@@ -1,0 +1,27 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  input {
+    all: unset;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid #1e352f;
+    padding: 10px 20px;
+    width: 318px;
+    background: #fff;
+  }
+
+  label {
+    font-weight: 300;
+  }
+
+  input::placeholder {
+    color: #b0988e;
+  }
+}
+
+.required {
+  color: red;
+}

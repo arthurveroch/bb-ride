@@ -1,0 +1,16 @@
+.contactContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  margin-bottom: 98px;
+}
+
+.contact {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+}

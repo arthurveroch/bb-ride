@@ -683,6 +683,8 @@ export interface Professionnal {
     | {
         icon: number | Media;
         description: string;
+        width: number;
+        height: number;
         id?: string | null;
       }[]
     | null;
@@ -889,6 +891,8 @@ export interface ProfessionnalSelect<T extends boolean = true> {
     | {
         icon?: T;
         description?: T;
+        width?: T;
+        height?: T;
         id?: T;
       };
   updatedAt?: T;

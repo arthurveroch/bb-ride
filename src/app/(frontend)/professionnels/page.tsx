@@ -8,6 +8,7 @@ import Personnalisation from '../components/professionnals-page/personnalisation
 import Selection from '../components/professionnals-page/selection/Selection'
 import Offre from '../components/professionnals-page/offre/Offre'
 import Histoire from '../components/professionnals-page/histoire/Histoire'
+import Arguments from '../components/home-page/arguments/Arguments'
 
 export const revalidate = 3600 * 24 * 7
 
@@ -34,6 +35,8 @@ export default async function ProfessionnalPage() {
       <Selection selectionData={data.selection} />
       <Offre offreData={data.offre} />
       <Histoire histoireData={data.histoire} />
+      <Arguments argumentsData={data.arguments} />
     </main>
   )
 }
+627.2
