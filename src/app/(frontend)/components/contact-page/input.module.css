@@ -19,6 +19,7 @@
 
   input::placeholder {
     color: #b0988e;
+    font-weight: 300;
   }
 }
 

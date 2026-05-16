@@ -23,10 +23,48 @@ export default function Form() {
         et je fais mon maximum pour vous répondre au plus vite.
       </p>
       <form className={styles.form}>
-        <Input label="Votre nom" placeholder="Dubois" required={true} />
-        <Input label="Votre Prénom" placeholder="Jean" required={true} />
-        <Input label="Votre e-mail" placeholder="jean.dubois@gmail.com" required={true} />
-        <Input label="Votre téléphone" placeholder="06 00 00 00 00" required={false} />
+        <Input
+          value={nom}
+          onChange={(e) => setNom(e.target.value)}
+          label="Votre nom"
+          placeholder="Dubois"
+          required={true}
+        />
+        <Input
+          value={prenom}
+          onChange={(e) => setPrenom(e.target.value)}
+          label="Votre Prénom"
+          placeholder="Jean"
+          required={true}
+        />
+        <Input
+          value={mail}
+          onChange={(e) => setMail(e.target.value)}
+          label="Votre e-mail"
+          placeholder="jean.dubois@gmail.com"
+          required={true}
+        />
+        <Input
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          label="Votre téléphone"
+          placeholder="06 00 00 00 00"
+          required={false}
+        />
+        <div className={`${styles.textarea} ${inter.className}`}>
+          <label>
+            Détaillez votre demande
+            <span className={styles.required}>*</span>
+          </label>
+          <textarea
+            value={details}
+            onChange={(e) => setDetails(e.target.value)}
+            placeholder="Votre demande, le point de retrait souhaité ou toute autre information importante "
+          />
+        </div>
+        <span className={inter.className}>
+          <span className={styles.required}>*</span> Champs obligatoires
+        </span>
       </form>
     </div>
   )
