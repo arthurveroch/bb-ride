@@ -23,8 +23,6 @@ const getHomePage = unstable_cache(
 export default async function HomePage() {
   const data = await getHomePage()
 
-  console.log(data)
-
   return (
     <main>
       <Hero heroData={data.Hero} />

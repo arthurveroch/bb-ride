@@ -24,8 +24,6 @@ const getPage = unstable_cache(
 export default async function ProfessionnalPage() {
   const data = await getPage()
 
-  console.log(data)
-
   return (
     <main>
       <Hero heroData={data.hero} />
