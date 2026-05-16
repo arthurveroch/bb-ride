@@ -9,16 +9,21 @@ import Selection from '../components/professionnals-page/selection/Selection'
 import Offre from '../components/professionnals-page/offre/Offre'
 import Histoire from '../components/professionnals-page/histoire/Histoire'
 import Arguments from '../components/home-page/arguments/Arguments'
+import { unstable_cache } from 'next/cache'
 
 export const revalidate = 604800
 
-const getPage = async () => {
-  const payload = await getPayload({ config })
+const getPage = unstable_cache(
+  async () => {
+    const payload = await getPayload({ config })
 
-  const data = payload.findGlobal({ slug: 'professionnal', depth: 2 })
+    const page = payload.findGlobal({ slug: 'professionnal', depth: 2 })
 
-  return data
-}
+    return page
+  },
+  ['pro'],
+  { revalidate: 604800 },
+)
 
 export default async function ProfessionnalPage() {
   const data = await getPage()

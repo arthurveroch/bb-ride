@@ -8,14 +8,17 @@ import Vehicles from './components/home-page/vehicles/Vehicles'
 import Pricing from './components/home-page/pricing/Pricing'
 import Faq from './components/home-page/faq/Faq'
 import Arguments from './components/home-page/arguments/Arguments'
+import { unstable_cache } from 'next/cache'
 
-export const revalidate = 604800
+const getHomePage = unstable_cache(
+  async () => {
+    const payload = await getPayload({ config })
 
-const getHomePage = async () => {
-  const payload = await getPayload({ config })
-
-  return payload.findGlobal({ slug: 'home-page', depth: 2 })
-}
+    return payload.findGlobal({ slug: 'home-page', depth: 2 })
+  },
+  ['home'],
+  { revalidate: 604800 },
+)
 
 export default async function HomePage() {
   const data = await getHomePage()

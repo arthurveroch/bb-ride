@@ -1,7 +1,12 @@
+import { revalidateTag } from 'next/cache'
 import { type GlobalConfig } from 'payload'
 
 export const Professional: GlobalConfig = {
   slug: 'professionnal',
+
+  hooks: {
+    afterChange: [() => revalidateTag('pro', 'max')],
+  },
 
   fields: [
     {

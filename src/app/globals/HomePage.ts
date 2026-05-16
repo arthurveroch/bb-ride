@@ -1,7 +1,12 @@
+import { revalidateTag } from 'next/cache'
 import type { GlobalConfig } from 'payload'
 
 export const HomePage: GlobalConfig = {
   slug: 'home-page',
+
+  hooks: {
+    afterChange: [() => revalidateTag('home', 'max')],
+  },
 
   fields: [
     {
