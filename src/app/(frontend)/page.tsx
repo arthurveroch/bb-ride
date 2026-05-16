@@ -9,7 +9,7 @@ import Pricing from './components/home-page/pricing/Pricing'
 import Faq from './components/home-page/faq/Faq'
 import Arguments from './components/home-page/arguments/Arguments'
 
-export const revalidate = 3600 * 24 * 7
+export const revalidate = 604800
 
 const getHomePage = async () => {
   const payload = await getPayload({ config })

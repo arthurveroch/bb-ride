@@ -10,7 +10,7 @@ import Offre from '../components/professionnals-page/offre/Offre'
 import Histoire from '../components/professionnals-page/histoire/Histoire'
 import Arguments from '../components/home-page/arguments/Arguments'
 
-export const revalidate = 3600 * 24 * 7
+export const revalidate = 604800
 
 const getPage = async () => {
   const payload = await getPayload({ config })
