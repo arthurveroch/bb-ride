@@ -10,6 +10,8 @@ import Faq from './components/home-page/faq/Faq'
 import Arguments from './components/home-page/arguments/Arguments'
 import { unstable_cache } from 'next/cache'
 
+export const dynamic = 'force-dynamic'
+
 const getHomePage = unstable_cache(
   async () => {
     const payload = await getPayload({ config })
