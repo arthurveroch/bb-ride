@@ -44,4 +44,3 @@ export default async function ProfessionnalPage() {
     </main>
   )
 }
-627.2
