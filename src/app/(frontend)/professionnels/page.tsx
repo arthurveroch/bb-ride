@@ -11,8 +11,6 @@ import Histoire from '../components/professionnals-page/histoire/Histoire'
 import Arguments from '../components/home-page/arguments/Arguments'
 import { unstable_cache } from 'next/cache'
 
-export const revalidate = 604800
-
 const getPage = unstable_cache(
   async () => {
     const payload = await getPayload({ config })
