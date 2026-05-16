@@ -17,9 +17,7 @@ const getPage = unstable_cache(
   async () => {
     const payload = await getPayload({ config })
 
-    const page = payload.findGlobal({ slug: 'professionnal', depth: 2 })
-
-    return page
+    return payload.findGlobal({ slug: 'professionnal', depth: 2 })
   },
   ['pro'],
   { revalidate: 604800 },
