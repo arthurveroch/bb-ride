@@ -5,9 +5,10 @@ import styles from './form.module.css'
 import Title from '../reusable-ui/title/Title'
 import { inter } from '@/app/lib/fonts'
 import Input from './Input'
+import ButtonForm from './ButtonForm'
 
 export default function Form() {
-  const [type, setType] = useState('Particulier')
+  const [type, setType] = useState('Un particulier')
   const [prenom, setPrenom] = useState('')
   const [nom, setNom] = useState('')
   const [mail, setMail] = useState('')
@@ -23,6 +24,16 @@ export default function Form() {
         et je fais mon maximum pour vous répondre au plus vite.
       </p>
       <form className={styles.form}>
+        <div className={`${styles.selector} ${inter.className}`}>
+          <label>
+            Vous êtes <span className={styles.required}>*</span>
+          </label>
+          <select value={type} onChange={(e) => setType(e.target.value)} required>
+            <option>Un professionnel</option>
+            <option>Un particulier</option>
+          </select>
+        </div>
+
         <Input
           value={nom}
           onChange={(e) => setNom(e.target.value)}
@@ -65,6 +76,7 @@ export default function Form() {
         <span className={inter.className}>
           <span className={styles.required}>*</span> Champs obligatoires
         </span>
+        <ButtonForm text="Envoyer" />
       </form>
     </div>
   )
