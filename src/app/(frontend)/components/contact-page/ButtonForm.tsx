@@ -8,7 +8,7 @@ type Props = {
 export default function ButtonForm({ text }: Props) {
   return (
     <button className={`${inter.className} ${styles.buttonContainer}`}>
-      {text}
+      <span className={inter.className}>{text}</span>
       <div className={styles.arrowContainer}>
         <svg
           width="13"

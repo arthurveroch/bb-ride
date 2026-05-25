@@ -4,7 +4,6 @@
   align-items: flex-start;
   flex-direction: column;
   gap: 20px;
-  cursor: pointer;
 
   p {
     width: 100%;
@@ -24,6 +23,14 @@
   span {
     width: 100%;
   }
+}
+
+.selector {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 300;
+  width: 100%;
 
   select {
     all: unset;
@@ -34,15 +41,8 @@
     box-sizing: border-box;
     display: flex;
     width: 318px;
+    cursor: pointer;
   }
-}
-
-.selector {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  font-weight: 300;
-  width: 100%;
 }
 
 .textarea {
