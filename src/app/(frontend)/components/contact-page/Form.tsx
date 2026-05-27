@@ -15,8 +15,9 @@ export default function Form() {
   const [mail, setMail] = useState('')
   const [phone, setPhone] = useState('')
   const [details, setDetails] = useState('')
+  const [isOpenPopUp, setIsOpenPopUp] = useState(false)
 
-  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
     sendMessage({ type, prenom, nom, mail, phone, details })

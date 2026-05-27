@@ -16,3 +16,43 @@
   background: #ffffff;
   border-radius: 22px;
 }
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  h2 {
+    font-size: 20px;
+    color: #865135;
+    font-weight: 600;
+  }
+}
+
+.item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    color: #4d413c;
+    font-size: 16px;
+    font-weight: 300;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .footer {
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+
+@media screen and (max-width: 820) {
+  .footer {
+    flex-direction: column;
+    gap: 50px;
+    width: auto;
+  }
+}
