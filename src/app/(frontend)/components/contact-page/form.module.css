@@ -78,3 +78,13 @@
 .required {
   color: red;
 }
+
+@media screen and (max-width: 705px) {
+  .selector {
+    width: 100%;
+
+    select {
+      width: 100%;
+    }
+  }
+}

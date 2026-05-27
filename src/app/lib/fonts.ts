@@ -5,6 +5,7 @@ export const inter = Inter({
   subsets: ['latin'],
   weight: ['700', '400', '300'],
   preload: false,
+  variable: '--font-inter',
 })
 
 export const hiragino = localFont({

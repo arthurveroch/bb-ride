@@ -5,6 +5,7 @@
   align-items: center;
   margin-top: 200px;
   margin-bottom: 98px;
+  padding: 0 20px;
 }
 
 .contact {
@@ -13,4 +14,19 @@
   display: flex;
   justify-content: center;
   gap: 90px;
+}
+
+.image {
+  width: 513px;
+  align-self: stretch;
+  border-radius: 44px;
+  background: url('/contact/bg-image.png');
+  background-position: center;
+  background-size: cover;
+}
+
+@media screen and (max-width: 1440px) {
+  .image {
+    display: none;
+  }
 }

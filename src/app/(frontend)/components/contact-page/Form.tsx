@@ -15,6 +15,15 @@ export default function Form() {
   const [phone, setPhone] = useState('')
   const [details, setDetails] = useState('')
 
+  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    try {
+    } catch {
+    } finally {
+    }
+  }
+
   return (
     <div className={styles.formContainer}>
       <Title title="Nous contacter" subtitle={null} className={null} />
@@ -23,7 +32,7 @@ export default function Form() {
         pas timide, envoyez-moi un message via ce formulaire. Je lis chaque message personnellement
         et je fais mon maximum pour vous répondre au plus vite.
       </p>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <div className={`${styles.selector} ${inter.className}`}>
           <label>
             Vous êtes <span className={styles.required}>*</span>
