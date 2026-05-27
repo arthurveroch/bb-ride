@@ -6,6 +6,7 @@ import Title from '../reusable-ui/title/Title'
 import { inter } from '@/app/lib/fonts'
 import Input from './Input'
 import ButtonForm from './ButtonForm'
+import { sendMessage } from '@/app/actions/actions'
 
 export default function Form() {
   const [type, setType] = useState('Un particulier')
@@ -18,10 +19,7 @@ export default function Form() {
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    try {
-    } catch {
-    } finally {
-    }
+    sendMessage({ type, prenom, nom, mail, phone, details })
   }
 
   return (

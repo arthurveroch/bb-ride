@@ -20,4 +20,35 @@ const transporter = nodemailer.createTransport({
   },
 })
 
-export const sendMail = async ({ type, prenom, nom, mail, phone, details }: Mail) => {}
+export const sendMessage = async ({
+  type,
+  prenom,
+  nom,
+  mail,
+  phone,
+  details,
+}: Mail): Promise<
+  | {
+      success: boolean
+      message?: undefined
+    }
+  | {
+      success: boolean
+      message: string
+    }
+> => {
+  try {
+    await transporter.sendMail({
+      from: mail,
+      to: process.env.SMTP_USER,
+      subject: `Nouvelle demande BB-Ride de ${nom} ${prenom}`,
+      text: `Vous avez reçu un nouveau message : \n Prénom : ${prenom} \n Nom : ${nom} \n Numéro de téléphone : ${phone} \n Type de client : ${type} \n Message : ${details}  `,
+    })
+
+    return { success: true }
+  } catch (error) {
+    console.error(error)
+
+    return { success: false, message: "Erreur lors de l'envoi " }
+  }
+}
