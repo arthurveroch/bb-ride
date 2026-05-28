@@ -16,12 +16,16 @@ export default function MobileMenu() {
         <ul className={styles.menuItems}>
           {pathname !== '/professionnels' && (
             <li className={inter.className}>
-              <Link href={'/professionnels'}>Pour les professionnels</Link>
+              <Link onClick={() => setOpen(false)} href={'/professionnels'}>
+                Pour les professionnels
+              </Link>
             </li>
           )}
           {pathname !== '/' && (
             <li className={inter.className}>
-              <Link href={'/'}>Pour les particuliers</Link>
+              <Link onClick={() => setOpen(false)} href={'/'}>
+                Pour les particuliers
+              </Link>
             </li>
           )}
         </ul>
