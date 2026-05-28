@@ -26,14 +26,6 @@ export default function Vehicles({ vehiclesData }: Props) {
                 : {}
             }
           />
-          <div className={styles.electric}>
-            <Image
-              src={'/vehicles/electric-icon.svg'}
-              width={57}
-              height={71}
-              alt="Icône représentant une charge électrique"
-            />
-          </div>
           <Paragraph
             className={styles.paragraph}
             containButton={false}
