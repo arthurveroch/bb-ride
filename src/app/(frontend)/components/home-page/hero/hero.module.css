@@ -80,7 +80,7 @@
 
 @media screen and (max-width: 1024px) {
   .heroContainer {
-    min-height: none;
+    min-height: auto;
   }
 
   .subCta {
