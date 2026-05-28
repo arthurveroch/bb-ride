@@ -111,9 +111,7 @@
     padding: 0 30px;
     top: 164px;
   }
-}
 
-@media screen and (max-width: 380px) {
   .title {
     h2 {
       font-size: 65px;
