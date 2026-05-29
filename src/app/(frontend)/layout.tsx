@@ -15,6 +15,7 @@ export default async function RootLayout({ children }: Props) {
       <body>
         <MobileMenuContextProvider>
           <Navbar />
+          <MobileContactButtons />
           <MobileMenu />
           <MobileContactButtons />
           <main>{children}</main>

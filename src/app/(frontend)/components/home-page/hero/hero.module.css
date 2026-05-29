@@ -120,4 +120,8 @@
       line-height: calc(100% + 40px);
     }
   }
+
+  .ctaContainer {
+    display: none;
+  }
 }

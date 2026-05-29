@@ -110,4 +110,7 @@
       max-width: 340px;
     }
   }
+  .ctaContainer {
+    display: none;
+  }
 }
