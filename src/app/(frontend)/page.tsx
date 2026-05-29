@@ -12,6 +12,17 @@ import { unstable_cache } from 'next/cache'
 
 export const dynamic = 'force-dynamic'
 
+export const generateMetadata = () => {
+  return {
+    title: 'BB-Ride – Location de Mini Moke électrique | Bandol, Sanary & Var',
+    descritption:
+      'Louez une Mini Moke 100% électrique sur le littoral varois. Bandol, Sanary, Le Castellet, Hyères… Livraison incluse, guide BB Ride & expériences sur mesure.',
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}`,
+    },
+  }
+}
+
 const getHomePage = unstable_cache(
   async () => {
     const payload = await getPayload({ config })

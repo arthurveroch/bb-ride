@@ -13,6 +13,17 @@ import { unstable_cache } from 'next/cache'
 
 export const dynamic = 'force-dynamic'
 
+export const generateMetadata = () => {
+  return {
+    title: 'BB-Ride Pro – Mini Moke électrique pour hôtels, mariages & événements | Var',
+    description:
+      "Enrichissez l'expérience de vos clients avec la Mini Moke électrique BB-Ride. Hôtels, conciergeries, mariages, team building… Flotte personnalisable, livraison sur site dans le Var.",
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/professionnels`,
+    },
+  }
+}
+
 const getPage = unstable_cache(
   async () => {
     const payload = await getPayload({ config })
