@@ -12,7 +12,10 @@ export default function MobileMenu() {
 
   if (open) {
     return (
-      <div className={styles.mobileMenuContainer}>
+      <div
+        style={pathname === '/contact' ? { marginTop: '-200px' } : {}}
+        className={styles.mobileMenuContainer}
+      >
         <ul className={styles.menuItems}>
           {pathname !== '/professionnels' && (
             <li className={inter.className}>
