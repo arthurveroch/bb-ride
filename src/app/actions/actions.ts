@@ -42,7 +42,7 @@ export const sendMessage = async ({
       from: mail,
       to: process.env.SMTP_USER,
       subject: `Nouvelle demande BB-Ride de ${nom} ${prenom}`,
-      text: `Vous avez reçu un nouveau message : \n Prénom : ${prenom} \n Nom : ${nom} \n Numéro de téléphone : ${phone} \n Type de client : ${type} \n Message : ${details}  `,
+      text: `Vous avez reçu un nouveau message : \n Prénom : ${prenom} \n Nom : ${nom} \n Numéro de téléphone : ${phone || 'Non renseigné'} \n Type de client : ${type} \n Message : ${details}  `,
     })
 
     return { success: true }
