@@ -17,7 +17,7 @@ export const dynamic = 'force-dynamic'
 
 export const generateMetadata = async () => {
   const locale = await getLocale()
-  const t = await getTranslations('metadata.pro')
+  const t = await getTranslations('pro.metadata')
 
   return {
     title: t('title'),
