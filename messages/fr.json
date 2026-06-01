@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "individuals": "Pour les particuliers",
+    "professionals": "Pour les professionnels"
+  },
+  "contact": {
+    "metadata": {
+      "contact": {
+        "title": "Contacter BB-Ride – Réservation & devis Mini Moke électrique | Var",
+        "description": "Une question, une réservation ou un devis pro ? Contactez Laura de BB-Ride par formulaire, WhatsApp ou e-mail. Réponse personnalisée et rapide."
+      }
+    },
+    "title": "Nous contacter",
+    "description": "Une idée de collaboration, une question précise ou juste envie de dire bonjour ? Ne soyez pas timide, envoyez-moi un message via ce formulaire. Je lis chaque message personnellement et je fais mon maximum pour vous répondre au plus vite.",
+    "youAre": "Vous êtes",
+    "youArePlaceholder": "Un professionnel",
+    "lastName": "Votre nom",
+    "lastNamePlaceholder": "Dubois",
+    "firstName": "Votre Prénom",
+    "firstNamePlaceholder": "Jean",
+    "email": "Votre e-mail",
+    "emailPlaceholder": "jean.dubois@gmail.com",
+    "phone": "Votre téléphone",
+    "phonePlaceholder": "06 00 00 00 00",
+    "message": "Détaillez votre demande",
+    "messagePlaceholder": "Votre demande, le point de retrait souhaité ou toute autre information importante",
+    "required": "Champs obligatoires",
+    "submit": "Envoyer"
+  }
+}
