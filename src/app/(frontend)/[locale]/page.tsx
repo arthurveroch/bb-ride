@@ -11,18 +11,21 @@ import Experiences from './components/home-page/experiences/Experiences'
 import Arguments from './components/home-page/arguments/Arguments'
 import Pricing from './components/home-page/pricing/Pricing'
 import Faq from './components/home-page/faq/Faq'
-import { getTranslations } from 'next-intl/server'
+import { getLocale, getTranslations } from 'next-intl/server'
 
 export const dynamic = 'force-dynamic'
 
+const locale = await getLocale()
+
 export const generateMetadata = async () => {
-  const t = await getTranslations()
+  const t = await getTranslations('home')
 
   return {
-    title: t('contact.metadata.title'),
-    descritption: t('contact.metadata.description'),
+    title: t('metadata.title'),
+    descritption: t('metadata.description'),
+
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}`,
+      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${locale}`,
     },
   }
 }

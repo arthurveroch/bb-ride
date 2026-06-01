@@ -24,5 +24,19 @@
     "messagePlaceholder": "Votre demande, le point de retrait souhaité ou toute autre information importante",
     "required": "Champs obligatoires",
     "submit": "Envoyer"
+  },
+
+  "home": {
+    "metadata": {
+      "title": "BB-Ride – Location de Mini Moke électrique | Bandol, Sanary & Var",
+      "description": "Louez une Mini Moke 100% électrique sur le littoral varois. Bandol, Sanary, Le Castellet, Hyères… Livraison incluse, guide BB Ride & expériences sur mesure."
+    }
+  },
+
+  "pro": {
+    "metadata": {
+      "title": "BB-Ride Pro – Mini Moke électrique pour hôtels, mariages & événements | Var",
+      "description": "Enrichissez l'expérience de vos clients avec la Mini Moke électrique BB-Ride. Hôtels, conciergeries, mariages, team building… Flotte personnalisable, livraison sur site dans le Var."
+    }
   }
 }

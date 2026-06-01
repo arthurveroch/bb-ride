@@ -10,16 +10,19 @@ import Offre from '../components/professionnals-page/offre/Offre'
 import Histoire from '../components/professionnals-page/histoire/Histoire'
 import Arguments from '../components/home-page/arguments/Arguments'
 import { unstable_cache } from 'next/cache'
+import { getLocale, getTranslations } from 'next-intl/server'
 
 export const dynamic = 'force-dynamic'
+const locale = await getLocale()
 
-export const generateMetadata = () => {
+export const generateMetadata = async () => {
+  const t = await getTranslations('pro')
+
   return {
-    title: 'BB-Ride Pro – Mini Moke électrique pour hôtels, mariages & événements | Var',
-    description:
-      "Enrichissez l'expérience de vos clients avec la Mini Moke électrique BB-Ride. Hôtels, conciergeries, mariages, team building… Flotte personnalisable, livraison sur site dans le Var.",
+    title: t('metadata.title'),
+    descritption: t('metadata.description'),
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/professionnels`,
+      canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/${locale}/professionnels`,
     },
   }
 }
