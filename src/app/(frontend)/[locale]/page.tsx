@@ -1,14 +1,16 @@
 import { getPayload } from 'payload'
 import config from '@payload-config'
-import Hero from '../components/home-page/hero/Hero'
-import Spots from '../components/home-page/spots/Spots'
-import Moments from '../components/home-page/moments/Moments'
-import Experiences from '../components/home-page/experiences/Experiences'
-import Vehicles from '../components/home-page/vehicles/Vehicles'
-import Pricing from '../components/home-page/pricing/Pricing'
-import Faq from '../components/home-page/faq/Faq'
-import Arguments from '../components/home-page/arguments/Arguments'
+
 import { unstable_cache } from 'next/cache'
+
+import Moments from './components/home-page/moments/Moments'
+import Hero from './components/home-page/hero/Hero'
+import Spots from './components/home-page/spots/Spots'
+import Vehicles from './components/home-page/vehicles/Vehicles'
+import Experiences from './components/home-page/experiences/Experiences'
+import Arguments from './components/home-page/arguments/Arguments'
+import Pricing from './components/home-page/pricing/Pricing'
+import Faq from './components/home-page/faq/Faq'
 
 export const dynamic = 'force-dynamic'
 
