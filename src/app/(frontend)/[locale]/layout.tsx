@@ -7,6 +7,7 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import './styles.css'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
+import { getMessages } from 'next-intl/server'
 
 type Props = {
   children: React.ReactNode
@@ -19,10 +20,12 @@ export default async function RootLayout({ children, params }: Props) {
     notFound()
   }
 
+  const messages = await getMessages()
+
   return (
     <html lang="en">
       <body>
-        <NextIntlClientProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <MobileMenuContextProvider>
             <Navbar />
             <MobileContactButtons />
