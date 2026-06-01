@@ -8,6 +8,7 @@ export const MentionsLegales: GlobalConfig = {
       name: 'content',
       type: 'richText',
       required: true,
+      localized: true,
     },
   ],
 }
