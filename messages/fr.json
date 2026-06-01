@@ -1,7 +1,8 @@
 {
   "nav": {
     "individuals": "Pour les particuliers",
-    "professionals": "Pour les professionnels"
+    "professionals": "Pour les professionnels",
+    "cta": "Réserver mon véhicule"
   },
   "contact": {
     "metadata": {

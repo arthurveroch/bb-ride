@@ -9,12 +9,13 @@ import Button from '../reusable-ui/button/Button'
 import PhoneButton from '../reusable-ui/phone/PhoneButton'
 import Link from 'next/link'
 import { useMenu } from '@/app/context/MobileMenuContext'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 export default function Navbar() {
   const pathname = usePathname()
   const router = useRouter()
   const t = useTranslations('nav')
+  const locale = useLocale()
 
   const { open, setOpen } = useMenu()
 
@@ -33,20 +34,20 @@ export default function Navbar() {
       </div>
       <div className={styles.menuContainer}>
         <ul className={`${styles.menu} ${inter.className}`}>
-          {pathname !== '/professionnels' && (
+          {pathname !== `${locale}/professionnels` && (
             <li>
               <Link href={'/professionnels'}>{t('professionals')}</Link>
             </li>
           )}
 
-          {pathname !== '/' && (
+          {pathname !== `/${locale}` && (
             <li>
               <Link href={'/'}>{t('individuals')}</Link>
             </li>
           )}
         </ul>
         <div className={styles.ctaContainer}>
-          {pathname !== '/contact' && <Button link="/contact" text="Réserver mon véhicule" />}
+          {pathname !== `${locale}/contact` && <Button link="/contact" text={t('cta')} />}
           <PhoneButton />
         </div>
       </div>

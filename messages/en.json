@@ -1,7 +1,8 @@
 {
   "nav": {
     "individuals": "For individuals",
-    "professionals": "For professionals"
+    "professionals": "For professionals",
+    "cta": "Book my vehicle"
   },
   "contact": {
     "metadata": {
