@@ -1,11 +1,13 @@
 import Form from '../components/contact-page/Form'
 import styles from './contact.module.css'
+import { getTranslations } from 'next-intl/server'
 
-export const generateMetadata = () => {
+export const generateMetadata = async () => {
+  const t = await getTranslations('contact')
+
   return {
-    title: 'Contacter BB-Ride – Réservation & devis Mini Moke électrique | Var',
-    description:
-      'Une question, une réservation ou un devis pro ? Contactez Laura de BB-Ride par formulaire, WhatsApp ou e-mail. Réponse personnalisée et rapide.',
+    title: t('metadata.title'),
+    description: t('metadata.description'),
     alternates: {
       canonical: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/contact`,
     },

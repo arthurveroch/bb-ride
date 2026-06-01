@@ -8,6 +8,7 @@ import Input from './Input'
 import ButtonForm from './ButtonForm'
 import { sendMessage } from '@/app/actions/actions'
 import PopUp from './PopUp'
+import { useTranslations } from 'next-intl'
 
 export default function Form() {
   const [type, setType] = useState('Un particulier')
@@ -17,6 +18,8 @@ export default function Form() {
   const [phone, setPhone] = useState('')
   const [details, setDetails] = useState('')
   const [isOpenPopUp, setIsOpenPopUp] = useState(false)
+
+  const t = useTranslations('contact')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -39,66 +42,62 @@ export default function Form() {
   return (
     <>
       <div className={styles.formContainer}>
-        <Title title="Nous contacter" subtitle={null} className={null} />
-        <p className={inter.className}>
-          Une idée de collaboration, une question précise ou juste envie de dire bonjour ? Ne soyez
-          pas timide, envoyez-moi un message via ce formulaire. Je lis chaque message
-          personnellement et je fais mon maximum pour vous répondre au plus vite.
-        </p>
+        <Title title={t('title')} subtitle={null} className={null} />
+        <p className={inter.className}>{t('description')}</p>
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={`${styles.selector} ${inter.className}`}>
             <label>
-              Vous êtes <span className={styles.required}>*</span>
+              {t('youAre')} <span className={styles.required}>*</span>
             </label>
             <select value={type} onChange={(e) => setType(e.target.value)} required>
-              <option>Un professionnel</option>
-              <option>Un particulier</option>
+              <option>{t('optionProfessional')}</option>
+              <option>{t('optionIndividual')}</option>
             </select>
           </div>
 
           <Input
             value={nom}
             onChange={(e) => setNom(e.target.value)}
-            label="Votre nom"
-            placeholder="Dubois"
+            label={t('lastName')}
+            placeholder={t('lastNamePlaceholder')}
             required={true}
           />
           <Input
             value={prenom}
             onChange={(e) => setPrenom(e.target.value)}
-            label="Votre Prénom"
-            placeholder="Jean"
+            label={t('firstName')}
+            placeholder={t('firstNamePlaceholder')}
             required={true}
           />
           <Input
             value={mail}
             onChange={(e) => setMail(e.target.value)}
-            label="Votre e-mail"
-            placeholder="jean.dubois@gmail.com"
+            label={t('email')}
+            placeholder={t('emailPlaceholder')}
             required={true}
           />
           <Input
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            label="Votre téléphone"
-            placeholder="06 00 00 00 00"
+            label={t('phone')}
+            placeholder={t('phonePlaceholder')}
             required={false}
           />
           <div className={`${styles.textarea} ${inter.className}`}>
             <label>
-              Détaillez votre demande
+              {t('message')}
               <span className={styles.required}>*</span>
             </label>
             <textarea
               value={details}
               onChange={(e) => setDetails(e.target.value)}
-              placeholder="Votre demande, le point de retrait souhaité ou toute autre information importante "
+              placeholder={t('messagePlaceholder')}
             />
           </div>
           <span className={inter.className}>
-            <span className={styles.required}>*</span> Champs obligatoires
+            <span className={styles.required}>*</span> {t('required')}
           </span>
-          <ButtonForm text="Envoyer" />
+          <ButtonForm text={t('submit')} />
         </form>
       </div>
       {isOpenPopUp && <PopUp setIsOpenPopUp={setIsOpenPopUp} />}
