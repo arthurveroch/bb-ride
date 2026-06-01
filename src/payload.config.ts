@@ -11,6 +11,7 @@ import { HomePage } from './app/globals/HomePage'
 import { MentionsLegales } from './app/globals/MentionsLegales'
 import { Professional } from './app/globals/Professional'
 import { migrations } from 'migrations'
+import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -38,4 +39,16 @@ export default buildConfig({
   sharp,
   plugins: [],
   globals: [HomePage, Professional, MentionsLegales],
+  email: await nodemailerAdapter({
+    defaultFromAddress: 'no-reply@bb-ride.com',
+    defaultFromName: 'BB-Ride',
+    transportOptions: {
+      host: process.env.SMTP_HOST,
+      port: 465,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASSWORD,
+      },
+    },
+  }),
 })
