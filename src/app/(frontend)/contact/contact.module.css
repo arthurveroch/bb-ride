@@ -18,6 +18,7 @@
 
 .image {
   width: 513px;
+  max-height: 732px;
   align-self: stretch;
   border-radius: 44px;
   background: url('/contact/bg-image.png');
