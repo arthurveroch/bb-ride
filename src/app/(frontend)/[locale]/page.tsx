@@ -11,10 +11,11 @@ import Experiences from './components/home-page/experiences/Experiences'
 import Arguments from './components/home-page/arguments/Arguments'
 import Pricing from './components/home-page/pricing/Pricing'
 import Faq from './components/home-page/faq/Faq'
+import getLocale
 
 export const dynamic = 'force-dynamic'
 
-export const generateMetadata = () => {
+export const generateMetadata = async () => {
   return {
     title: 'BB-Ride – Location de Mini Moke électrique | Bandol, Sanary & Var',
     descritption:
