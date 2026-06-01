@@ -34,7 +34,7 @@ export default function Navbar() {
       </div>
       <div className={styles.menuContainer}>
         <ul className={`${styles.menu} ${inter.className}`}>
-          {pathname !== `${locale}/professionnels` && (
+          {pathname !== `/${locale}/professionnels` && (
             <li>
               <Link href={'/professionnels'}>{t('professionals')}</Link>
             </li>
@@ -47,7 +47,7 @@ export default function Navbar() {
           )}
         </ul>
         <div className={styles.ctaContainer}>
-          {pathname !== `${locale}/contact` && <Button link="/contact" text={t('cta')} />}
+          {pathname !== `/${locale}/contact` && <Button link="/contact" text={t('cta')} />}
           <PhoneButton />
         </div>
       </div>
