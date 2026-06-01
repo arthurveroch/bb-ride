@@ -23,7 +23,12 @@
     "message": "Détaillez votre demande",
     "messagePlaceholder": "Votre demande, le point de retrait souhaité ou toute autre information importante",
     "required": "Champs obligatoires",
-    "submit": "Envoyer"
+    "submit": "Envoyer",
+    "popup": {
+      "title": "Merci !",
+      "message": "Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais.",
+      "closeAlt": "Icône représentant une croix pour fermer le popup"
+    }
   },
 
   "home": {

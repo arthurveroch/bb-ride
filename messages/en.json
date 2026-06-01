@@ -23,7 +23,12 @@
     "message": "Detail your request",
     "messagePlaceholder": "Your request, the desired pickup point or any other important information",
     "required": "Required fields",
-    "submit": "Send"
+    "submit": "Send",
+    "popup": {
+      "title": "Thank you!",
+      "message": "Your message has been sent. We will get back to you as soon as possible.",
+      "closeAlt": "Icon representing a cross to close the popup"
+    }
   },
   "home": {
     "metadata": {

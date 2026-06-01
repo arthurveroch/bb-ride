@@ -1,3 +1,6 @@
+'use client'
+
+import { useTranslations } from 'next-intl'
 import { inter } from '@/app/lib/fonts'
 import Title from '../reusable-ui/title/Title'
 import styles from './popup.module.css'
@@ -9,6 +12,8 @@ type Props = {
 }
 
 export default function PopUp({ setIsOpenPopUp }: Props) {
+  const t = useTranslations('contact.popup')
+
   return (
     <div className={styles.container}>
       <div className={styles.popUp}>
@@ -17,12 +22,10 @@ export default function PopUp({ setIsOpenPopUp }: Props) {
           src={'/contact/popup-cross.svg'}
           width={39}
           height={37}
-          alt="Icône représentant une crois pour fermer le popup"
+          alt={t('closeAlt')}
         />
-        <Title subtitle={null} title="Merci !" className={null} />
-        <p className={inter.className}>
-          Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais.
-        </p>
+        <Title subtitle={null} title={t('title')} className={null} />
+        <p className={inter.className}>{t('message')}</p>
       </div>
     </div>
   )
