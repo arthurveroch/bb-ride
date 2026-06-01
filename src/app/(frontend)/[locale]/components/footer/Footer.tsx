@@ -3,15 +3,18 @@ import styles from './footer.module.css'
 import { hiragino, inter } from '@/app/lib/fonts'
 import Link from 'next/link'
 import Button from '../reusable-ui/button/Button'
+import { getTranslations } from 'next-intl/server'
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await getTranslations('footer')
+
   return (
     <footer className={styles.footerContainer}>
       <div className={styles.footer}>
         <div className={styles.section}>
-          <h2 className={hiragino.className}>Réseaux sociaux</h2>
+          <h2 className={hiragino.className}>{t('socials')}</h2>
           <div className={styles.item}>
-            <Image src={'/footer/insta.svg'} width={33} height={33} alt="Logo Instagram" />
+            <Image src={'/footer/insta.svg'} width={33} height={33} alt={t('instagramAlt')} />
             <Link
               href="https://www.instagram.com/bb__ride/"
               target="_blank"
@@ -22,9 +25,9 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles.section}>
-          <h2 className={hiragino.className}>Nous contacter</h2>
+          <h2 className={hiragino.className}>{t('contact')}</h2>
           <div className={styles.item}>
-            <Image src={'/footer/wa.svg'} width={25} height={25} alt="Logo WhatsApp" />
+            <Image src={'/footer/wa.svg'} width={25} height={25} alt={t('whatsappAlt')} />
             <Link
               href="https://wa.me/33671141771"
               target="_blank"
@@ -34,7 +37,7 @@ export default function Footer() {
             </Link>
           </div>
           <div className={styles.item}>
-            <Image src={'/footer/mail.svg'} width={25} height={17} alt="Icône d'enveloppe" />
+            <Image src={'/footer/mail.svg'} width={25} height={17} alt={t('mailAlt')} />
             <Link
               href="mailto:contact@bb-ride.com"
               target="_blank"
@@ -44,7 +47,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        <Button text="Mentions légales" link="/mentions-legales" />
+        <Button text={t('legal')} link="/mentions-legales" />
       </div>
     </footer>
   )

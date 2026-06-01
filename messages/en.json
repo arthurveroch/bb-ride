@@ -41,5 +41,13 @@
       "title": "BB-Ride Pro – Electric Mini Moke for hotels, weddings & events | Var",
       "description": "Enhance your clients' experience with the BB-Ride electric Mini Moke. Hotels, concierges, weddings, team building… Customisable fleet, on-site delivery across the Var."
     }
+  },
+  "footer": {
+    "socials": "Social media",
+    "instagramAlt": "Instagram logo",
+    "contact": "Contact us",
+    "whatsappAlt": "WhatsApp logo",
+    "mailAlt": "Envelope icon",
+    "legal": "Legal notice"
   }
 }

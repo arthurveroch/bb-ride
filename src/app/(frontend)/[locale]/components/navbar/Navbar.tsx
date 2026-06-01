@@ -9,10 +9,12 @@ import Button from '../reusable-ui/button/Button'
 import PhoneButton from '../reusable-ui/phone/PhoneButton'
 import Link from 'next/link'
 import { useMenu } from '@/app/context/MobileMenuContext'
+import { useTranslations } from 'next-intl'
 
 export default function Navbar() {
   const pathname = usePathname()
   const router = useRouter()
+  const t = useTranslations('nav')
 
   const { open, setOpen } = useMenu()
 
@@ -33,13 +35,13 @@ export default function Navbar() {
         <ul className={`${styles.menu} ${inter.className}`}>
           {pathname !== '/professionnels' && (
             <li>
-              <Link href={'/professionnels'}>Pour les professionnels</Link>
+              <Link href={'/professionnels'}>{t('professionals')}</Link>
             </li>
           )}
 
           {pathname !== '/' && (
             <li>
-              <Link href={'/'}>Pour les particuliers</Link>
+              <Link href={'/'}>{t('individuals')}</Link>
             </li>
           )}
         </ul>
