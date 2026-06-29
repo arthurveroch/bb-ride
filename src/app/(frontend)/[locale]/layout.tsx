@@ -23,7 +23,7 @@ export default async function RootLayout({ children, params }: Props) {
   const messages = await getMessages()
 
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <MobileMenuContextProvider>
