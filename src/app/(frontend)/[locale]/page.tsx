@@ -33,8 +33,8 @@ const getHomePage = (locale: string) =>
       const payload = await getPayload({ config })
       return payload.findGlobal({ slug: 'home-page', depth: 2, locale: locale as 'all' })
     },
-    [`home-${locale}`],
-    { revalidate: 604800 },
+    [`home`],
+    { tags: ['home'], revalidate: 604800 },
   )()
 
 export default async function HomePage() {

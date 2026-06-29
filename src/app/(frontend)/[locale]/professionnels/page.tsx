@@ -34,8 +34,8 @@ const getPage = (locale: string) =>
       const payload = await getPayload({ config })
       return payload.findGlobal({ slug: 'professionnal', depth: 2, locale: locale as 'all' })
     },
-    [`pro-${locale}`],
-    { revalidate: 604800 },
+    [`pro`],
+    { tags: ['pro'], revalidate: 604800 },
   )()
 
 export default async function ProfessionnalPage() {
