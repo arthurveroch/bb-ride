@@ -4,7 +4,7 @@ import styles from './phone-button.module.css'
 export default function PhoneButton() {
   return (
     <div className={styles.phoneButtonContainer}>
-      <Link href={'tel:+33683816123'}>
+      <Link href={'tel:+33671141771'}>
         <svg
           width="24"
           height="24"

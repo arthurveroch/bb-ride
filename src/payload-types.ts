@@ -86,7 +86,7 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  fallbackLocale: null;
+  fallbackLocale: ('false' | 'none' | 'null') | false | null | ('en' | 'fr') | ('en' | 'fr')[];
   globals: {
     'home-page': HomePage;
     professionnal: Professionnal;
@@ -97,7 +97,7 @@ export interface Config {
     professionnal: ProfessionnalSelect<false> | ProfessionnalSelect<true>;
     'mentions-legales': MentionsLegalesSelect<false> | MentionsLegalesSelect<true>;
   };
-  locale: null;
+  locale: 'en' | 'fr';
   widgets: {
     collections: CollectionsWidget;
   };
